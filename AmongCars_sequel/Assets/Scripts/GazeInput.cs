@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GazeInput : MonoBehaviour {
 	
-	public Transform door;
+	public DoorRotate rotateScript;
 	
 	//TIMER
 	private bool isLooked = false;
@@ -33,6 +33,6 @@ public class GazeInput : MonoBehaviour {
 	}
 	
 	public void OnPointerClick() {
-		door.localRotation = Quaternion.Euler(0, 0, -150);
+		rotateScript.ToggleDoor();
 	}
 }
