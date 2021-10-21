@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GazeInput : MonoBehaviour {
+	
+	public Transform door;
+	
 	//TIMER
 	private bool isLooked = false;
 	public float timerDuration = 3f;
@@ -30,6 +33,6 @@ public class GazeInput : MonoBehaviour {
 	}
 	
 	public void OnPointerClick() {
-		Debug.Log("clic");
+		door.localRotation = Quaternion.Euler(0, 0, -150);
 	}
 }
