@@ -5,11 +5,12 @@ using System;
 
 public class DoorRotate : MonoBehaviour {
 	
+	public AudioSource doorSound;
+	
 	public float openedAngle = 210;
 	public float rotationSpeed = -1;
-	private bool reversedRotation;
 	
-	private float rotation;
+	private bool reversedRotation;
 	private bool isRotating = false;
 	
 	void Start() {
@@ -30,5 +31,6 @@ public class DoorRotate : MonoBehaviour {
 	
 	public void ToggleDoor() {
 		this.isRotating = true;
+		this.doorSound.Play();
 	}
 }
