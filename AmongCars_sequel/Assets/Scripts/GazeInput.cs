@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GazeInput : MonoBehaviour {
 	
-	public DoorRotate rotateScript;
+	public GameAction clicAction;
 	
 	//TIMER
 	private bool isLooked = false;
@@ -33,6 +33,6 @@ public class GazeInput : MonoBehaviour {
 	}
 	
 	public void OnPointerClick() {
-		rotateScript.ToggleDoor();
+		this.clicAction.Run();
 	}
 }

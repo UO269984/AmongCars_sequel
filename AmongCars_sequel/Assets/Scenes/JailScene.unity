@@ -1059,6 +1059,7 @@ MonoBehaviour:
   gravity: -9.81
   jumpHeight: 0.5
   goal: Goal
+  hitGoalAction: {fileID: 692929921228534252}
 --- !u!143 &978015342
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1256,7 +1257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c974caed7725e4e88f78a6c3784779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateScript: {fileID: 5293839671854043710}
+  clicAction: {fileID: 5293839671854043710}
   timerDuration: 3
 --- !u!4 &1303406035
 Transform:
@@ -2116,6 +2117,7 @@ GameObject:
   - component: {fileID: 1904969324523347072}
   - component: {fileID: 3080775280374665375}
   - component: {fileID: 692929921228534251}
+  - component: {fileID: 692929921228534252}
   m_Layer: 0
   m_Name: PortalFilm
   m_TagString: Goal
@@ -2136,6 +2138,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.014947254, y: 0.021780364, z: 0.00026367191}
   m_Center: {x: 0.0004161334, y: -0.0013686945, z: 0.000026054387}
+--- !u!114 &692929921228534252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692929921228534250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bdcd85a2d724314b8a6bb73875e00aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &761683775500885374
 MeshFilter:
   m_ObjectHideFlags: 0

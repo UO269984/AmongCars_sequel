@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 
 public class Movement : MonoBehaviour {
+	
 	public CharacterController controller;
 	public float speed = 8f;
 	public float gravity = -9.81f;
 	public float jumpHeight = 0.5f;
 	
 	public string goal = "Goal";
+	public GameAction hitGoalAction;
 	
 	private bool playerOnTheFloor = true;
 	private Vector3 velocity;
@@ -34,6 +36,6 @@ public class Movement : MonoBehaviour {
 		}
 			
 		else if (hit.gameObject.CompareTag(this.goal))
-			Debug.Log("Next scene");
+			this.hitGoalAction.Run();
 	}
 }
