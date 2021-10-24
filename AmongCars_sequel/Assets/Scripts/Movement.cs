@@ -7,6 +7,8 @@ public class Movement : MonoBehaviour {
 	public float gravity = -9.81f;
 	public float jumpHeight = 0.5f;
 	
+	public AudioSource stepsAudioSource;
+	
 	public string goal = "Goal";
 	public GameAction hitGoalAction;
 	
@@ -16,6 +18,8 @@ public class Movement : MonoBehaviour {
 	void Update() {
 		float x = Input.GetAxis("Horizontal");
 		float z = Input.GetAxis("Vertical");
+		if (! this.stepsAudioSource.isPlaying && this.playerOnTheFloor && (x != 0 || z != 0))
+			stepsAudioSource.Play();
 		
 		Vector3 move = transform.right * x + transform.forward * z;
 		this.controller.Move(move * this.speed * Time.deltaTime);
@@ -23,6 +27,9 @@ public class Movement : MonoBehaviour {
 		if (this.playerOnTheFloor && Input.GetButtonDown("Jump")) {
 			this.velocity.y = Mathf.Sqrt(this.jumpHeight * -2f * this.gravity);
 			playerOnTheFloor = false;
+			
+			if (this.stepsAudioSource.isPlaying)
+				this.stepsAudioSource.Stop();
 		}
 		
 		this.velocity.y += this.gravity * Time.deltaTime;
