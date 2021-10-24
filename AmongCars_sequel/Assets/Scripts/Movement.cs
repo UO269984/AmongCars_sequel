@@ -36,10 +36,8 @@ public class Movement : MonoBehaviour {
 		this.velocity.y += this.gravity * Time.deltaTime;
 		this.controller.Move(this.velocity * Time.deltaTime);
 		
-		if (Input.GetButtonDown("ToggleFPS")) {
-			Debug.Log("innn");
+		if (Input.GetButtonDown("ToggleFPS"))
 			this.fpsTextMesh.enabled = ! this.fpsTextMesh.enabled;
-		}
 	}
 	
 	public void OnControllerColliderHit(ControllerColliderHit hit) {
