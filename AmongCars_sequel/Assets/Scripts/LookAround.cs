@@ -11,6 +11,7 @@ public class LookAround : MonoBehaviour {
 	float xRotation = 0f;
 	
 	void Start() {
+		Screen.sleepTimeout = SleepTimeout.NeverSleep;
 		Cursor.lockState = CursorLockMode.Locked;
 	}
 	

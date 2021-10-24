@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour {
 	public float jumpHeight = 0.5f;
 	
 	public AudioSource stepsAudioSource;
+	public MeshRenderer fpsTextMesh;
 	
 	public string goal = "Goal";
 	public GameAction hitGoalAction;
@@ -34,6 +35,11 @@ public class Movement : MonoBehaviour {
 		
 		this.velocity.y += this.gravity * Time.deltaTime;
 		this.controller.Move(this.velocity * Time.deltaTime);
+		
+		if (Input.GetButtonDown("ToggleFPS")) {
+			Debug.Log("innn");
+			this.fpsTextMesh.enabled = ! this.fpsTextMesh.enabled;
+		}
 	}
 	
 	public void OnControllerColliderHit(ControllerColliderHit hit) {
