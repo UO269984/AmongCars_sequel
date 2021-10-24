@@ -1803,6 +1803,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6895996045129934834, guid: 6ba97bbba98e31b4b914cc21d885bbb8, type: 3}
+      propertyPath: fpsTextMesh
+      value: 
+      objectReference: {fileID: 1406950651}
+    - target: {fileID: 6895996045129934834, guid: 6ba97bbba98e31b4b914cc21d885bbb8, type: 3}
       propertyPath: stepsAudioSource
       value: 
       objectReference: {fileID: 855195589}
@@ -1860,6 +1864,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ba97bbba98e31b4b914cc21d885bbb8, type: 3}
+--- !u!1 &1406950649 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6895996045110910702, guid: 6ba97bbba98e31b4b914cc21d885bbb8, type: 3}
+  m_PrefabInstance: {fileID: 1406950648}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1406950650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406950649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ad76a380416c94a9aec52390e4f184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!23 &1406950651 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6895996045063711739, guid: 6ba97bbba98e31b4b914cc21d885bbb8, type: 3}
+  m_PrefabInstance: {fileID: 1406950648}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1429402500
 PrefabInstance:
   m_ObjectHideFlags: 0
