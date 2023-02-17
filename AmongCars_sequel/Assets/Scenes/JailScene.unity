@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14536ced50e75c443840c2b1acc12188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpsListSize: 100
+  updateTime: 0.1
 --- !u!102 &649713763
 TextMesh:
   serializedVersion: 3

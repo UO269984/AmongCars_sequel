@@ -1,26 +1,26 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FPSCounter : MonoBehaviour {
+	public double updateTime = 0.1;
 	
-	public int fpsListSize = 100;
+	private double accumTime = 0;
+	private int framesCount = 0;
 	
-	private LinkedList<int> fps = new LinkedList<int>();
-	private int fpsSum = 0;
+	private TextMesh textComponent;
 	
-	void Update() {
-		this.fps.AddLast((int) Math.Round(1 / Time.deltaTime));
-		this.fpsSum += this.fps.Last.Value;
+	public void Start() {
+		this.textComponent = GetComponent<TextMesh>();
+	}
+	
+	public void Update() {
+		this.accumTime += Time.unscaledDeltaTime;
+		this.framesCount++;
 		
-		if (this.fps.Count > fpsListSize) {
-			this.fpsSum -= this.fps.First.Value;
-			this.fps.RemoveFirst();
+		if (this.accumTime > this.updateTime) {
+			this.textComponent.text = "FPS: " + (int) (this.framesCount / this.accumTime);
+			this.accumTime = 0;
+			this.framesCount = 0;
 		}
-		
-		GetComponent<TextMesh>().text = "FPS: " + (fpsSum / fps.Count);
 	}
 }
