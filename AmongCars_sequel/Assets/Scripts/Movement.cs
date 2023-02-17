@@ -41,7 +41,7 @@ public class Movement : MonoBehaviour {
 	}
 	
 	public void OnControllerColliderHit(ControllerColliderHit hit) {
-		if (hit.gameObject.CompareTag("Floor")) {
+		if (hit.gameObject.CompareTag("Floor") && Vector3.Angle(hit.normal, Vector3.up) < 20) {
 			this.playerOnTheFloor = true;
 			this.velocity.y = 0;
 		}
