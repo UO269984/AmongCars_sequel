@@ -13,6 +13,14 @@ public class LookAround : MonoBehaviour {
 	void Start() {
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;
 		Cursor.lockState = CursorLockMode.Locked;
+		
+		switch (Application.platform) {
+			case RuntimePlatform.WindowsPlayer:
+			case RuntimePlatform.LinuxPlayer:
+			case RuntimePlatform.WebGLPlayer:
+				this.lookSpeed /= 5;
+				break;
+		}
 	}
 	
 	void Update() {
