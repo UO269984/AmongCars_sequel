@@ -17,15 +17,15 @@ public class Movement : MonoBehaviour {
 	private Vector3 velocity;
 	
 	void Update() {
-		float x = Input.GetAxis("Horizontal");
-		float z = Input.GetAxis("Vertical");
+		float x = InputManager.input.GetAxisAction("MoveX");
+		float z = -InputManager.input.GetAxisAction("MoveY");
 		if (! this.stepsAudioSource.isPlaying && this.playerOnTheFloor && (x != 0 || z != 0))
 			stepsAudioSource.Play();
 		
 		Vector3 move = transform.right * x + transform.forward * z;
 		this.controller.Move(move * this.speed * Time.deltaTime);
 		
-		if (this.playerOnTheFloor && Input.GetButtonDown("Jump")) {
+		if (this.playerOnTheFloor && InputManager.input.GetButtonAction("Jump")) {
 			this.velocity.y = Mathf.Sqrt(this.jumpHeight * -2f * this.gravity);
 			playerOnTheFloor = false;
 			
@@ -36,7 +36,7 @@ public class Movement : MonoBehaviour {
 		this.velocity.y += this.gravity * Time.deltaTime;
 		this.controller.Move(this.velocity * Time.deltaTime);
 		
-		if (Input.GetButtonDown("ToggleFPS"))
+		if (InputManager.input.GetButtonAction("ToggleFPS"))
 			this.fpsTextMesh.enabled = ! this.fpsTextMesh.enabled;
 	}
 	

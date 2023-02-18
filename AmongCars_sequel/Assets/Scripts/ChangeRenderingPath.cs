@@ -13,7 +13,7 @@ public class ChangeRenderingPath : MonoBehaviour {
 	}
 	
 	void Update() {
-		if (Input.GetButtonDown("ToggleLighting")) {
+		if (InputManager.input.GetButtonAction("ToggleLighting")) {
 			this.isDefered = ! this.isDefered;
 			this.cameraComponent.renderingPath = this.isDefered ? RenderingPath.DeferredShading : RenderingPath.Forward;
 		}
