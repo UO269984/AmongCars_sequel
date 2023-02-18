@@ -18,7 +18,9 @@ public class LookAround : MonoBehaviour {
 			case RuntimePlatform.WindowsPlayer:
 			case RuntimePlatform.LinuxPlayer:
 			case RuntimePlatform.WebGLPlayer:
-				this.lookSpeed /= 5;
+				if (InputManager.inputType == InputType.Default)
+					this.lookSpeed /= 5;
+				
 				break;
 		}
 	}
